@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 class Nota {
     String numeDisciplina;
@@ -115,15 +116,38 @@ class Student {
 }
 
 public class Program {
-    public static void main(String[] args)
+    static Scanner scanner = new Scanner(System.in);
+    static Student[] studenti;
+    static void afisare(String mesaj)
     {
-        System.out.println(new Nota());
-        var nota = new Nota("Java", 10);
-        var ion = new Student(13, "Ion", 1234, 2);
-        ion.add(nota);
-        ion.add(new Nota("PAW", 4));
-        ion.add(new Nota("SDD", 6));
-        ion.add(new Nota("PAW", 8));
-        System.out.println(ion);
+        System.out.println("---" + mesaj + "---");
+        for(var student : studenti)
+        {
+            System.out.println(student);
+        }
+        System.out.println("-------------------");
+    }
+
+    public static void main(String args[])
+    {
+        var numarStudenti = Integer.parseInt(scanner.nextLine());
+        System.out.println(numarStudenti + " studenti");
+
+        studenti = new Student[numarStudenti];
+        for(int i=0; i<numarStudenti; i++)
+        {
+            var linie = scanner.nextLine().split(",");
+            var student = new Student(
+                    Integer.parseInt(linie[0]), linie[1], Integer.parseInt(linie[2]), Integer.parseInt(linie[3])
+            );
+            studenti[i] = student;
+            linie = scanner.nextLine().split(",");
+            for(int iNote = 0; iNote < linie.length; iNote+=2)
+            {
+                var nota = new Nota(linie[iNote], Integer.parseInt(linie[iNote + 1]));
+                student.add(nota);
+            }
+        }
+        afisare("Dupa citire:");
     }
 }
