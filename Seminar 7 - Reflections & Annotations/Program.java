@@ -16,6 +16,7 @@ import java.util.Scanner;
 public class Program {
 
     static Object citireObiect(Class<?> clasa) throws Exception {
+
         var constructor = clasa.getConstructor();
         var obiect = constructor.newInstance();
         var scanner = new Scanner(System.in);
