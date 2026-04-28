@@ -1,0 +1,8 @@
+Melodie
+3
+titlu
+Get Free
+artist
+Lana del Rey
+durata
+5.5
