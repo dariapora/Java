@@ -13,3 +13,8 @@ Repo-ul contine atat activitatea din cadrul seminarelor de la facultate, cat si 
 
 ### [Seminar 7 - Reflections & Annotations](./Seminar%207%20-%20Reflections%20%26%20Annotations)
 > Exercitii de la seminar + tema.<br />
+
+### Extras
+
+#### [Pregatire Test](./Pregatire%20Test)
+> Recapitulare pentru test.<br />
